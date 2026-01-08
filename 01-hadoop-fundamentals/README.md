@@ -44,3 +44,38 @@ Example output from the mapper:
 (word, 1)
 
 
+This simulates how Hadoop mappers transform raw input into intermediate data.
+
+---
+
+### 3. Shuffle and Sort (Conceptual)
+In Hadoop, the framework automatically groups all identical keys and sends them to the same reducer.
+
+In this implementation, Python data structures simulate this behavior by grouping word counts internally.
+
+---
+
+### 4. Reducer Phase
+The reducer function aggregates the counts for each word by summing the values associated with each key.
+
+This produces the final word frequency for the entire dataset.
+
+---
+
+### 5. Output Generation
+The final word counts are printed in sorted order, similar to the output of a Hadoop MapReduce job.
+
+---
+
+## Example
+
+### Input
+Hadoop is scalable
+Hadoop is powerful
+
+### Output
+hadoop 2
+is 2
+powerful 1
+scalable 1
+
