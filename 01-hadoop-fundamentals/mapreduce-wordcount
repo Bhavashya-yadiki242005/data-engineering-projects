@@ -1,0 +1,41 @@
+import sys
+from collections import defaultdict
+
+def mapper(lines):
+    """
+    Mapper function:
+    Takes lines of text and emits (word, 1)
+    """
+    mapped_data = []
+    for line in lines:
+        words = line.strip().split()
+        for word in words:
+            mapped_data.append((word.lower(), 1))
+    return mapped_data
+
+
+def reducer(mapped_data):
+    """
+    Reducer function:
+    Aggregates counts for each word
+    """
+    reduced_data = defaultdict(int)
+    for word, count in mapped_data:
+        reduced_data[word] += count
+    return reduced_data
+
+
+if __name__ == "__main__":
+    # Read input from standard input (simulating HDFS input)
+    input_lines = sys.stdin.readlines()
+
+    # Map phase
+    mapped_output = mapper(input_lines)
+
+    # Reduce phase
+    reduced_output = reducer(mapped_output)
+
+    # Print final word counts
+    for word, count in sorted(reduced_output.items()):
+        print(f"{word}\t{count}")
+
