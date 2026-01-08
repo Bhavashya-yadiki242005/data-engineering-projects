@@ -8,25 +8,20 @@ Each folder represents a different topic I studied, starting from fundamentals a
 like streaming, data lakes, and messaging systems.
 
 ---
-
 ## Repository Structure
----
+
+```
 data-engineering-projects:
   01-hadoop-fundamentals:
-    README.md:
   02-spark-basics:
-    README.md:
   03-etl-pipeline:
-    README.md:
   04-streaming-project:
-    socket_word_count.py:
-    README.md:
   05-data-lake-hive:
-    README.md:
   06-kafka-basics:
-    producer-consumer:
-      README.md:
   README.md:
+```
+
+
   
 
 
